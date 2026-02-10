@@ -1,0 +1,998 @@
+# 🚀 Kubernetes Yol Haritası - Sıfırdan Zirveye
+## Profesyonel Cloud Native Uzmanı Eğitim Programı
+
+> **Hedef:** 6-12 ay içinde endüstride aranan, profesyonel bir Kubernetes uzmanı olmak
+> **Yaklaşım:** %60 Pratik + %40 Teori
+> **Günlük Zaman:** 2-3 saat önerilen
+
+---
+
+## 📋 İçindekiler
+1. [Faz 0: Ön Hazırlık (2-3 Hafta)](#faz-0)
+2. [Faz 1: Temel Seviye (4-6 Hafta)](#faz-1)
+3. [Faz 2: Orta Seviye (6-8 Hafta)](#faz-2)
+4. [Faz 3: İleri Seviye (6-8 Hafta)](#faz-3)
+5. [Faz 4: Production & DevOps (4-6 Hafta)](#faz-4)
+6. [Faz 5: Uzmanlaşma & Sertifikasyon (4-8 Hafta)](#faz-5)
+7. [Bonus: Gerçek Dünya Projeleri](#projeler)
+8. [Kariyer Yol Haritası](#kariyer)
+
+---
+
+## <a id="faz-0"></a>📚 FAZ 0: ÖN HAZIRLIK (2-3 Hafta)
+
+### 🎯 Hedefler
+Kubernetes öğrenmeden önce sahip olunması gereken temel bilgileri kazanmak.
+
+### 📖 Hafta 1-2: Linux ve Terminal
+
+#### Öğrenilecekler:
+- [ ] Linux dosya sistemi yapısı
+- [ ] Temel komutlar (ls, cd, mkdir, rm, cp, mv, cat, grep, find)
+- [ ] Vim/Nano text editor kullanımı
+- [ ] Process yönetimi (ps, top, kill)
+- [ ] Kullanıcı ve izin yönetimi (chmod, chown)
+- [ ] SSH bağlantıları
+- [ ] Bash scripting temelleri
+
+#### 💻 Pratik Görevler:
+1. Ubuntu/Debian sanal makine kurun (VirtualBox veya VMware)
+2. Günlük olarak terminal üzerinden çalışın
+3. Basit bash scriptleri yazın (backup script, log analiz script)
+
+#### 📚 Kaynaklar:
+- Linux Journey (linuxjourney.com)
+- "The Linux Command Line" kitabı
+- OverTheWire - Bandit challenges
+
+### 📖 Hafta 2-3: Networking Temelleri
+
+#### Öğrenilecekler:
+- [ ] OSI ve TCP/IP modelleri
+- [ ] IP adresleme ve subnetting
+- [ ] DNS çalışma mantığı
+- [ ] HTTP/HTTPS protokolleri
+- [ ] Load balancing kavramı
+- [ ] Reverse proxy nedir
+- [ ] Firewall temelleri
+
+#### 💻 Pratik Görevler:
+1. Basit bir web server kurun (nginx)
+2. DNS kayıtları oluşturun
+3. Port forwarding yapılandırın
+4. tcpdump ile network trafiği analiz edin
+
+#### 📚 Kaynaklar:
+- "Computer Networking: A Top-Down Approach"
+- Cloudflare Learning Center
+- Practical Networking YouTube kanalı
+
+### 📖 Hafta 3: YAML ve JSON
+
+#### Öğrenilecekler:
+- [ ] YAML syntax ve kuralları
+- [ ] JSON formatı
+- [ ] YAML vs JSON farkları
+- [ ] YAML linting tools
+
+#### 💻 Pratik Görevler:
+1. Karmaşık YAML dosyaları yazın
+2. Online YAML validator kullanın
+3. JSON'dan YAML'a ve tersine çevirin
+
+---
+
+## <a id="faz-1"></a>🐳 FAZ 1: TEMEL SEVİYE (4-6 Hafta)
+
+### 📖 Hafta 1-2: Container Teknolojisi (Docker)
+
+#### Öğrenilecekler:
+- [ ] Container vs Virtual Machine
+- [ ] Docker mimarisi (daemon, client, registry)
+- [ ] Docker images ve layers
+- [ ] Dockerfile yazımı
+- [ ] Docker volumes
+- [ ] Docker networking
+- [ ] Docker Compose
+- [ ] Multi-stage builds
+
+#### 💻 Pratik Görevler:
+1. **Proje 1:** Basit bir Node.js uygulamasını containerize edin
+2. **Proje 2:** Multi-tier uygulama (Frontend + Backend + Database) docker-compose ile
+3. **Proje 3:** Kendi base image'ınızı oluşturun (Alpine tabanlı)
+4. **Proje 4:** Container güvenliği için best practices uygulayın
+
+#### 📚 Kaynaklar:
+- Docker Official Documentation
+- "Docker Deep Dive" - Nigel Poulton
+- Play with Docker (labs.play-with-docker.com)
+
+### 📖 Hafta 3-4: Kubernetes Temelleri
+
+#### Öğrenilecekler:
+- [ ] Kubernetes nedir ve neden kullanılır
+- [ ] Kubernetes mimarisi
+  - Control Plane components (API Server, Scheduler, Controller Manager, etcd)
+  - Worker Node components (kubelet, kube-proxy, Container Runtime)
+- [ ] kubectl kurulumu ve temel komutları
+- [ ] Minikube / Kind ile local cluster
+- [ ] Namespaces kavramı
+
+#### 💻 Pratik Görevler:
+1. Minikube kurulumu ve ilk cluster'ınızı başlatın
+2. kubectl ile cluster'ınızı keşfedin
+3. Farklı namespace'ler oluşturun
+4. kubectl cheat sheet oluşturun
+
+#### 📚 Kaynaklar:
+- Kubernetes Official Documentation
+- "Kubernetes in Action" - Marko Luksa
+- KodeKloud Kubernetes for Beginners
+
+### 📖 Hafta 5-6: Core Kubernetes Objects
+
+#### Öğrenilecekler:
+- [ ] **Pods:**
+  - Pod lifecycle
+  - Multi-container pods
+  - Init containers
+  - Pod presets
+- [ ] **ReplicaSets ve Deployments:**
+  - Rolling updates
+  - Rollback strategies
+  - Scaling
+- [ ] **Services:**
+  - ClusterIP
+  - NodePort
+  - LoadBalancer
+  - ExternalName
+- [ ] **ConfigMaps ve Secrets:**
+  - Environment variables
+  - Volume mounts
+  - Secret types
+
+#### 💻 Pratik Görevler:
+1. **Proje 5:** Nginx deployment oluşturun (3 replicas)
+2. **Proje 6:** Zero-downtime deployment yapın (rolling update)
+3. **Proje 7:** ConfigMap ve Secret kullanarak uygulama yapılandırın
+4. **Proje 8:** Multi-container pod (sidecar pattern) oluşturun
+
+#### 📚 Kaynaklar:
+- Kubernetes Patterns kitabı
+- Kubernetes Examples (github.com/kubernetes/examples)
+
+#### ✅ Faz 1 Başarı Kriterleri:
+- [ ] Docker image'larını rahatça oluşturabiliyorum
+- [ ] Kubernetes cluster'da pod, deployment, service deploy edebiliyorum
+- [ ] kubectl komutlarını akıcı kullanabiliyorum
+- [ ] ConfigMap ve Secret yönetimi yapabiliyorum
+
+---
+
+## <a id="faz-2"></a>⚙️ FAZ 2: ORTA SEVİYE (6-8 Hafta)
+
+### 📖 Hafta 1-2: Storage Yönetimi
+
+#### Öğrenilecekler:
+- [ ] Volumes types (emptyDir, hostPath, etc.)
+- [ ] PersistentVolume (PV)
+- [ ] PersistentVolumeClaim (PVC)
+- [ ] StorageClass
+- [ ] Dynamic provisioning
+- [ ] StatefulSets
+- [ ] Volume snapshots
+
+#### 💻 Pratik Görevler:
+1. **Proje 9:** MySQL database StatefulSet ile deploy edin
+2. **Proje 10:** Dynamic volume provisioning yapılandırın
+3. **Proje 11:** Volume backup ve restore senaryosu
+4. **Proje 12:** Multi-zone storage replication
+
+#### 📚 Kaynaklar:
+- Kubernetes Storage Documentation
+- StatefulSet examples
+
+### 📖 Hafta 3-4: Advanced Networking
+
+#### Öğrenilecekler:
+- [ ] **Ingress Controllers:**
+  - Nginx Ingress
+  - Traefik
+  - Path-based routing
+  - Host-based routing
+  - TLS/SSL termination
+- [ ] **Network Policies:**
+  - Pod-to-Pod communication control
+  - Namespace isolation
+  - Egress/Ingress rules
+- [ ] **DNS in Kubernetes**
+- [ ] **Service Mesh (Giriş):**
+  - Istio temelleri
+  - Linkerd
+
+#### 💻 Pratik Görevler:
+1. **Proje 13:** Nginx Ingress Controller kurulumu
+2. **Proje 14:** Multi-tenant uygulama (subdomain routing)
+3. **Proje 15:** Network Policy ile micro-segmentation
+4. **Proje 16:** SSL certificate yönetimi (cert-manager)
+
+### 📖 Hafta 5-6: Security & RBAC
+
+#### Öğrenilecekler:
+- [ ] **Authentication & Authorization:**
+  - ServiceAccounts
+  - RBAC (Role, RoleBinding, ClusterRole, ClusterRoleBinding)
+  - Users ve Groups
+- [ ] **Security Best Practices:**
+  - Pod Security Standards (Policies)
+  - Security Contexts
+  - AppArmor, SELinux
+  - Network Policies (detaylı)
+- [ ] **Secrets Management:**
+  - External Secrets Operator
+  - Sealed Secrets
+  - Vault integration
+
+#### 💻 Pratik Görevler:
+1. **Proje 17:** RBAC ile user permission management
+2. **Proje 18:** Pod Security Policies uygulayın
+3. **Proje 19:** Secrets encryption at rest
+4. **Proje 20:** Security audit (kube-bench, kube-hunter)
+
+#### 📚 Kaynaklar:
+- "Kubernetes Security" - Liz Rice & Michael Hausenblas
+- CIS Kubernetes Benchmark
+
+### 📖 Hafta 7-8: Scheduling & Resource Management
+
+#### Öğrenilecekler:
+- [ ] **Resource Requests & Limits:**
+  - CPU ve Memory management
+  - QoS classes
+- [ ] **Advanced Scheduling:**
+  - Node affinity/anti-affinity
+  - Pod affinity/anti-affinity
+  - Taints and Tolerations
+  - Priority Classes
+- [ ] **Horizontal Pod Autoscaler (HPA)**
+- [ ] **Vertical Pod Autoscaler (VPA)**
+- [ ] **Cluster Autoscaler**
+- [ ] **DaemonSets**
+- [ ] **Jobs ve CronJobs**
+
+#### 💻 Pratik Görevler:
+1. **Proje 21:** Resource quotas ve limits yapılandırın
+2. **Proje 22:** HPA ile auto-scaling setup
+3. **Proje 23:** Batch processing (CronJob ile)
+4. **Proje 24:** Node affinity ile scheduling stratejisi
+
+#### ✅ Faz 2 Başarı Kriterleri:
+- [ ] Stateful uygulamaları deploy edebiliyorum
+- [ ] Ingress ve network policies yapılandırabiliyorum
+- [ ] RBAC ile güvenlik politikaları oluşturabiliyorum
+- [ ] Resource management ve auto-scaling yapabiliyorum
+
+---
+
+## <a id="faz-3"></a>🚀 FAZ 3: İLERİ SEVİYE (6-8 Hafta)
+
+### 📖 Hafta 1-2: Operators & CRDs
+
+#### Öğrenilecekler:
+- [ ] Custom Resource Definitions (CRDs)
+- [ ] Kubernetes Operators pattern
+- [ ] Operator SDK
+- [ ] Controller-runtime
+- [ ] Kubebuilder
+- [ ] Popular operators (Prometheus, MongoDB, etc.)
+
+#### 💻 Pratik Görevler:
+1. **Proje 25:** Basit bir CRD oluşturun
+2. **Proje 26:** Go ile custom operator yazın
+3. **Proje 27:** Operator lifecycle manager (OLM)
+4. **Proje 28:** Production-ready operator deploy edin
+
+#### 📚 Kaynaklar:
+- "Kubernetes Operators" - Jason Dobies & Joshua Wood
+- Operator SDK Tutorial
+- OperatorHub.io
+
+### 📖 Hafta 3-4: Service Mesh Deep Dive
+
+#### Öğrenilecekler:
+- [ ] **Istio:**
+  - Architecture (Data plane, Control plane)
+  - Traffic Management
+  - Security (mTLS)
+  - Observability
+  - Gateway configuration
+- [ ] **Linkerd alternatifi**
+- [ ] **Service Mesh karşılaştırması**
+
+#### 💻 Pratik Görevler:
+1. **Proje 29:** Istio kurulumu ve setup
+2. **Proje 30:** Traffic splitting (A/B testing, Canary)
+3. **Proje 31:** Circuit breaker implementation
+4. **Proje 32:** Service mesh security (mTLS, AuthZ)
+
+### 📖 Hafta 5-6: GitOps & Infrastructure as Code
+
+#### Öğrenilecekler:
+- [ ] **GitOps principles**
+- [ ] **ArgoCD:**
+  - Application deployment
+  - Sync strategies
+  - Multi-cluster management
+- [ ] **Flux CD**
+- [ ] **Helm:**
+  - Chart development
+  - Templating
+  - Helm hooks
+  - Chart repositories
+- [ ] **Kustomize**
+- [ ] **Terraform & Kubernetes**
+
+#### 💻 Pratik Görevler:
+1. **Proje 33:** ArgoCD ile GitOps pipeline
+2. **Proje 34:** Custom Helm chart oluşturun
+3. **Proje 35:** Multi-environment management (dev, staging, prod)
+4. **Proje 36:** Terraform ile Kubernetes resource yönetimi
+
+#### 📚 Kaynaklar:
+- "GitOps and Kubernetes" - Billy Yuen, Alexander Matyushentsev
+- ArgoCD Official Docs
+
+### 📖 Hafta 7-8: Advanced Cluster Management
+
+#### Öğrenilecekler:
+- [ ] Multi-cluster management
+- [ ] Cluster federation
+- [ ] Disaster recovery strategies
+- [ ] Backup ve restore (Velero)
+- [ ] Cluster upgrades (kubeadm, managed services)
+- [ ] etcd backup ve recovery
+- [ ] High Availability setup
+
+#### 💻 Pratik Görevler:
+1. **Proje 37:** Multi-cluster setup (dev, prod)
+2. **Proje 38:** Velero ile backup/restore automation
+3. **Proje 39:** Zero-downtime cluster upgrade
+4. **Proje 40:** Disaster recovery planı oluşturun ve test edin
+
+#### ✅ Faz 3 Başarı Kriterleri:
+- [ ] Custom operators yazabiliyorum
+- [ ] Service mesh kullanarak mikroservis yönetimi yapabiliyorum
+- [ ] GitOps workflow'ları oluşturabiliyorum
+- [ ] Multi-cluster yönetimi yapabiliyorum
+
+---
+
+## <a id="faz-4"></a>🔧 FAZ 4: PRODUCTION & DEVOPS (4-6 Hafta)
+
+### 📖 Hafta 1-2: CI/CD Pipeline Integration
+
+#### Öğrenilecekler:
+- [ ] **CI/CD Tools:**
+  - Jenkins X
+  - GitLab CI/CD
+  - GitHub Actions
+  - Tekton Pipelines
+- [ ] **Container registry management**
+- [ ] **Image scanning (Trivy, Clair)**
+- [ ] **Blue-Green deployments**
+- [ ] **Canary deployments**
+- [ ] **Progressive delivery (Flagger)**
+
+#### 💻 Pratik Görevler:
+1. **Proje 41:** GitHub Actions ile end-to-end CI/CD
+2. **Proje 42:** Container image vulnerability scanning
+3. **Proje 43:** Automated canary deployment
+4. **Proje 44:** Rollback automation
+
+### 📖 Hafta 3-4: Monitoring & Observability
+
+#### Öğrenilecekler:
+- [ ] **Prometheus:**
+  - Architecture
+  - PromQL
+  - Service discovery
+  - Recording rules, Alerting rules
+- [ ] **Grafana:**
+  - Dashboard creation
+  - Data sources
+  - Alerting
+- [ ] **Logging Stack:**
+  - ELK Stack (Elasticsearch, Logstash, Kibana)
+  - EFK Stack (Fluentd)
+  - Loki & Promtail
+- [ ] **Distributed Tracing:**
+  - Jaeger
+  - Zipkin
+- [ ] **Metrics Server**
+- [ ] **Kube-state-metrics**
+
+#### 💻 Pratik Görevler:
+1. **Proje 45:** Prometheus & Grafana stack kurulumu
+2. **Proje 46:** Custom metrics ve dashboards
+3. **Proje 47:** Centralized logging (EFK veya Loki)
+4. **Proje 48:** Distributed tracing implementation
+5. **Proje 49:** Alerting automation (PagerDuty, Slack)
+
+#### 📚 Kaynaklar:
+- "Prometheus: Up & Running"
+- Grafana tutorials
+
+### 📖 Hafta 5-6: Performance & Troubleshooting
+
+#### Öğrenilecekler:
+- [ ] **Performance tuning:**
+  - Cluster performance optimization
+  - Application profiling
+  - Resource optimization
+- [ ] **Troubleshooting tools:**
+  - kubectl debug
+  - Ephemeral containers
+  - stern (log aggregation)
+  - k9s (terminal UI)
+  - krew plugins
+- [ ] **Common issues ve solutions:**
+  - CrashLoopBackOff
+  - ImagePullBackOff
+  - OOMKilled
+  - Node NotReady
+  - Network issues
+
+#### 💻 Pratik Görevler:
+1. **Proje 50:** Troubleshooting lab ortamı oluşturun
+2. **Proje 51:** Performance benchmarking
+3. **Proje 52:** Chaos engineering (Chaos Mesh, Litmus)
+4. **Proje 53:** Incident response playbook oluşturun
+
+#### ✅ Faz 4 Başarı Kriterleri:
+- [ ] Production-ready CI/CD pipeline kurabiliyorum
+- [ ] Comprehensive monitoring ve alerting yapabiliyorum
+- [ ] Production issues'ları hızlıca debug edebiliyorum
+- [ ] Performance tuning yapabiliyorum
+
+---
+
+## <a id="faz-5"></a>🏆 FAZ 5: UZMANLAŞMA & SERTİFİKASYON (4-8 Hafta)
+
+### 📖 Hafta 1-2: Cloud Provider Integration
+
+#### AWS EKS:
+- [ ] EKS cluster creation
+- [ ] IAM roles for service accounts (IRSA)
+- [ ] AWS Load Balancer Controller
+- [ ] EBS CSI driver, EFS CSI driver
+- [ ] VPC CNI
+- [ ] Fargate integration
+
+#### Azure AKS:
+- [ ] AKS cluster creation
+- [ ] Azure AD integration
+- [ ] Azure CNI vs Kubenet
+- [ ] Azure Disk, Azure Files
+- [ ] Application Gateway Ingress
+
+#### Google GKE:
+- [ ] GKE cluster creation (Standard vs Autopilot)
+- [ ] Workload Identity
+- [ ] GKE networking
+- [ ] Persistent Disk CSI driver
+
+#### 💻 Pratik Görevler:
+1. **Proje 54:** Her üç cloud provider'da cluster kurun
+2. **Proje 55:** Multi-cloud deployment stratejisi
+3. **Proje 56:** Cost optimization (spot instances, cluster autoscaler)
+
+### 📖 Hafta 3-4: Advanced Topics
+
+#### Seçilebilir Uzmanlaşma Alanları:
+
+**A. Cloud Native Security:**
+- [ ] Falco (Runtime security)
+- [ ] OPA/Gatekeeper (Policy engine)
+- [ ] Admission controllers
+- [ ] Zero-trust networking
+- [ ] Supply chain security (SBOM, Sigstore)
+
+**B. Platform Engineering:**
+- [ ] Internal Developer Platform (IDP)
+- [ ] Backstage.io
+- [ ] Self-service portals
+- [ ] Developer experience optimization
+
+**C. Data Engineering on Kubernetes:**
+- [ ] Apache Spark on K8s
+- [ ] Apache Airflow
+- [ ] Kafka operators
+- [ ] Database operators (PostgreSQL, MySQL)
+
+#### 💻 Pratik Görevler:
+1. Seçtiğiniz alana göre 3-4 advanced proje yapın
+
+### 📖 Hafta 5-8: Sertifikasyon Hazırlığı
+
+#### CKA (Certified Kubernetes Administrator)
+
+**Kapsam:**
+- Cluster architecture, installation & configuration (25%)
+- Workloads & scheduling (15%)
+- Services & networking (20%)
+- Storage (10%)
+- Troubleshooting (30%)
+
+**Hazırlık Stratejisi:**
+1. killer.sh practice exams (2 ücretsiz deneme)
+2. KodeKloud CKA course
+3. Hands-on lab'lar (günde 2-3 saat)
+4. kubectl speed training
+
+#### CKAD (Certified Kubernetes Application Developer)
+
+**Kapsam:**
+- Application design and build (20%)
+- Application deployment (20%)
+- Application observability and maintenance (15%)
+- Application environment, configuration and security (25%)
+- Services & networking (20%)
+
+#### CKS (Certified Kubernetes Security Specialist)
+
+**Ön Koşul:** CKA sertifikası
+**Kapsam:**
+- Cluster setup (10%)
+- Cluster hardening (15%)
+- System hardening (15%)
+- Minimize microservice vulnerabilities (20%)
+- Supply chain security (20%)
+- Monitoring, logging and runtime security (20%)
+
+#### 📚 Sertifikasyon Kaynakları:
+- killer.sh (resmi pratik sınavları)
+- KodeKloud courses
+- Udemy - Mumshad Mannambeth courses
+- "Certified Kubernetes Administrator (CKA) Study Guide"
+
+#### 💡 Sınav İpuçları:
+- kubectl komutlarına hakimiyet şart
+- Kubernetes documentation'dan hızlıca arama yapabilme
+- Zaman yönetimi kritik (her soru için ~5-7 dakika)
+- Kolay soruları önce çöz, zor olanları işaretle
+- Her zaman --dry-run=client -o yaml kullan
+
+---
+
+## <a id="projeler"></a>💼 GERÇEK DÜNYA PROJELERİ
+
+### Proje 1: E-Commerce Platform (Kapsamlı)
+
+**Gereksinimler:**
+- Microservices architecture (5-7 servis)
+- Frontend (React/Vue)
+- Backend services (Node.js/Go/Python)
+- Databases (PostgreSQL, Redis, MongoDB)
+- Message queue (RabbitMQ/Kafka)
+- Service mesh (Istio)
+- CI/CD (GitOps with ArgoCD)
+- Monitoring (Prometheus, Grafana)
+- Logging (EFK Stack)
+- Security (RBAC, Network Policies, mTLS)
+
+**Özellikler:**
+- User authentication
+- Product catalog
+- Shopping cart
+- Payment integration (mock)
+- Order management
+- Notification service
+
+**Teknik Hedefler:**
+- Zero-downtime deployments
+- Auto-scaling (HPA + Cluster Autoscaler)
+- High availability
+- Disaster recovery
+- Load testing (K6, Locust)
+
+### Proje 2: Multi-Tenant SaaS Platform
+
+**Gereksinimler:**
+- Namespace-based tenant isolation
+- Custom domain per tenant
+- Resource quotas per tenant
+- Tenant-specific monitoring
+- Self-service tenant provisioning
+
+### Proje 3: ML/AI Pipeline Platform
+
+**Gereksinimler:**
+- Kubeflow deployment
+- GPU scheduling
+- Model training pipelines
+- Model serving (KServe)
+- Experiment tracking (MLflow)
+- Data versioning
+
+### Proje 4: Internal Developer Platform
+
+**Gereksinimler:**
+- Backstage.io setup
+- Service catalog
+- Self-service environment provisioning
+- Developer documentation portal
+- CI/CD integration
+
+---
+
+## <a id="kariyer"></a>🎯 KARİYER YOL HARİTASI
+
+### Junior DevOps/Cloud Engineer (0-2 yıl)
+
+**Beklenen Yetenekler:**
+- ✅ Docker ve containerization
+- ✅ Kubernetes temel objelerle çalışma
+- ✅ CI/CD pipeline kurulumu
+- ✅ Basic monitoring ve logging
+- ✅ Linux sistem yönetimi
+- ✅ Git ve version control
+
+**Ortalama Maaş (Türkiye):** 25.000₺ - 40.000₺
+**Ortalama Maaş (Remote/Global):** $40k - $70k
+
+### Mid-Level DevOps/SRE Engineer (2-4 yıl)
+
+**Beklenen Yetenekler:**
+- ✅ Production Kubernetes cluster yönetimi
+- ✅ Infrastructure as Code (Terraform, Helm)
+- ✅ GitOps implementations
+- ✅ Advanced networking ve security
+- ✅ Monitoring ve alerting expertise
+- ✅ Troubleshooting production issues
+- ✅ CKA veya CKAD sertifikası
+
+**Ortalama Maaş (Türkiye):** 45.000₺ - 70.000₺
+**Ortalama Maaş (Remote/Global):** $70k - $110k
+
+### Senior DevOps/Platform Engineer (4-7 yıl)
+
+**Beklenen Yetenekler:**
+- ✅ Multi-cluster management
+- ✅ Custom operators development
+- ✅ Service mesh implementation
+- ✅ High availability ve disaster recovery
+- ✅ Performance tuning ve optimization
+- ✅ Security hardening
+- ✅ Mentoring junior engineers
+- ✅ CKA + CKAD + CKS sertifikaları
+
+**Ortalama Maaş (Türkiye):** 75.000₺ - 120.000₺
+**Ortalama Maaş (Remote/Global):** $110k - $160k
+
+### Staff/Principal Engineer / DevOps Architect (7+ yıl)
+
+**Beklenen Yetenekler:**
+- ✅ Architecture design ve decision making
+- ✅ Cost optimization strategies
+- ✅ Organization-wide platform engineering
+- ✅ Technical leadership
+- ✅ Speaking ve community contributions
+- ✅ Multiple cloud providers expertise
+- ✅ Business alignment ve strategy
+
+**Ortalama Maaş (Türkiye):** 130.000₺ - 200.000₺+
+**Ortalama Maaş (Remote/Global):** $160k - $250k+
+
+---
+
+## 📚 KAPSAMLI KAYNAK LİSTESİ
+
+### Kitaplar (Öncelik Sırasıyla)
+
+1. **"Kubernetes in Action" (2nd Edition)** - Marko Luksa
+   ⭐⭐⭐⭐⭐ (Mutlaka okunmalı)
+
+2. **"Kubernetes: Up and Running" (3rd Edition)** - Brendan Burns et al.
+   ⭐⭐⭐⭐⭐
+
+3. **"The Kubernetes Book"** - Nigel Poulton
+   ⭐⭐⭐⭐ (Başlangıç için ideal)
+
+4. **"Production Kubernetes"** - Josh Rosso et al.
+   ⭐⭐⭐⭐⭐ (Production için)
+
+5. **"Kubernetes Best Practices"** - Brendan Burns
+   ⭐⭐⭐⭐
+
+6. **"Cloud Native DevOps with Kubernetes"** - John Arundel
+   ⭐⭐⭐⭐
+
+7. **"Kubernetes Security"** - Liz Rice & Michael Hausenblas
+   ⭐⭐⭐⭐⭐
+
+8. **"Kubernetes Operators"** - Jason Dobies & Joshua Wood
+   ⭐⭐⭐⭐
+
+### Online Kurslar
+
+1. **KodeKloud** (kodekloud.com)
+   - Kubernetes for Beginners
+   - CKA, CKAD, CKS prep courses
+   - Hands-on labs
+
+2. **A Cloud Guru / Pluralsight**
+   - Kubernetes Deep Dive
+   - Cloud provider specific courses
+
+3. **Linux Foundation Training**
+   - LFS258: Kubernetes Fundamentals
+   - LFS260: Kubernetes Security Essentials
+
+4. **Udemy - Mumshad Mannambeth**
+   - CKA/CKAD/CKS prep courses (En popüler)
+
+### YouTube Kanalları
+
+- TechWorld with Nana
+- That DevOps Guy
+- KodeKloud
+- CNCF (Cloud Native Computing Foundation)
+- Kubernetes YouTube (Official)
+
+### Hands-on Practice
+
+- **killer.sh** (CKA/CKAD/CKS practice)
+- **Katacoda Scenarios** (kapatıldı ama archive'leri mevcut)
+- **Play with Kubernetes** (labs.play-with-k8s.com)
+- **KodeKloud Playgrounds**
+- **Instruqt** (instruqt.com)
+
+### Documentation & Blogs
+
+- **Kubernetes Official Docs** (kubernetes.io/docs)
+- **CNCF Blog**
+- **Learnk8s.io** (Mükemmel diyagramlar ve makaleler)
+- **Kubernetes Blog**
+- **Medium - Kubernetes Tag**
+
+### Communities
+
+- **Kubernetes Slack** (kubernetes.slack.com)
+- **Reddit - r/kubernetes**
+- **Stack Overflow - kubernetes tag**
+- **CNCF Slack**
+- **Local Kubernetes meetups**
+
+### Tools & Utilities
+
+- **kubectl** (mutlaka)
+- **k9s** (Terminal UI)
+- **lens** (Desktop app)
+- **kubectx/kubens** (context/namespace switcher)
+- **stern** (multi-pod logging)
+- **krew** (kubectl plugin manager)
+- **helm**
+- **kustomize**
+
+---
+
+## 📅 HAFTALIK ÇALIŞMA PLANI ÖRNEĞİ
+
+### Örnek Günlük Rutin (3 saat)
+
+**Sabah (1 saat):**
+- 30 dk: Teori (kitap/video)
+- 30 dk: Documentation okuma
+
+**Akşam (2 saat):**
+- 90 dk: Hands-on lab / Proje
+- 30 dk: Blog yazma / Notes / Tekrar
+
+### Haftalık Hedefler
+
+**Pazartesi-Cuma:**
+- Günlük 2-3 saat çalışma
+- Haftada 1-2 blog post yazma
+- Haftada 1 mini-proje tamamlama
+
+**Cumartesi:**
+- Haftanın tekrarı
+- Büyük proje üzerinde çalışma
+
+**Pazar:**
+- Dinlenme veya optional çalışma
+- Yeni hafta planlaması
+
+---
+
+## 🎯 BAŞARI İÇİN İPUÇLARI
+
+### 1. Pratik Odaklı Öğrenin
+- 60% pratik, 40% teori kuralına uyun
+- Her yeni konuyu mutlaka hands-on deneyin
+- Kendi lab ortamınızı kurun
+
+### 2. Dokümantasyonu Ezberleyin
+- Kubernetes.io docs'a aşina olun
+- kubectl --help kullanmayı alışkanlık yapın
+- Cheat sheet'ler oluşturun
+
+### 3. Community'ye Katılın
+- Slack kanallarında aktif olun
+- Meetup'lara katılın
+- Blog yazın (öğrendiklerinizi paylaşın)
+
+### 4. Gerçek Projeler Yapın
+- Pet project'lerden kaçının
+- Gerçek senaryoları simüle edin
+- GitHub'da portfolyo oluşturun
+
+### 5. Her Gün Kod Yazın
+- GitHub contribution graph'ınızı yeşil tutun
+- Küçük de olsa her gün bir şeyler yapın
+- Consistency en önemli faktör
+
+### 6. Sertifikasyon Hedefleyin
+- CKA ile başlayın (temel)
+- Sonra CKAD (uygulama geliştirme)
+- Son olarak CKS (güvenlik)
+
+### 7. Network Oluşturun
+- LinkedIn'de aktif olun
+- Konferanslara katılın (KubeCon, CloudNative Days)
+- Mentorlar bulun
+
+### 8. Hata Yapmaktan Korkmayın
+- Production değil, lab ortamınızda denemeler yapın
+- Cluster'ı bozmak öğrenmenin bir parçası
+- Her hata bir öğrenme fırsatı
+
+### 9. İngilizce'ye Odaklanın
+- Tüm documentation İngilizce
+- Sertifikasyon sınavları İngilizce
+- Global fırsatlar için kritik
+
+### 10. Sabırlı Olun
+- 6-12 ay uzun bir süre, tutarlı olun
+- Burnout'tan kaçının
+- Küçük zaferleri kutlayın
+
+---
+
+## ✅ İLERLEME TAKİP KONTROLÜ
+
+### Aylık Self-Assessment
+
+Her ay sonunda kendinize sorun:
+
+- [ ] Bu ay hangi yeni Kubernetes özelliğini öğrendim?
+- [ ] Kaç hands-on proje tamamladım?
+- [ ] Hangi production scenario'ları simüle ettim?
+- [ ] Bir önceki aya göre ne kadar gelişim gösterdim?
+- [ ] Hangi sertifikasyona ne kadar yakınım?
+
+### Milestone Checkpoints
+
+**3. Ay Sonu:**
+- [ ] Kubernetes temellerini anlıyorum
+- [ ] Basit uygulamaları deploy edebiliyorum
+- [ ] kubectl'i rahatça kullanabiliyorum
+
+**6. Ay Sonu:**
+- [ ] Production-ready deployments yapabiliyorum
+- [ ] Monitoring ve logging setup edebiliyorum
+- [ ] Security best practices uygulayabiliyorum
+- [ ] CKA sertifikası aldım veya almaya hazırım
+
+**9. Ay Sonu:**
+- [ ] Multi-cluster yönetimi yapabiliyorum
+- [ ] GitOps workflow'ları kurabiliyorum
+- [ ] Custom operators yazabiliyorum
+- [ ] CKAD sertifikası aldım
+
+**12. Ay Sonu:**
+- [ ] Production-grade Kubernetes expertise
+- [ ] 3-5 comprehensive proje portfolyom var
+- [ ] CKA + CKAD + (optional CKS) sertifikalarım var
+- [ ] İş başvurularına hazırım
+
+---
+
+## 🚀 HEMEN BAŞLAMAK İÇİN ACTIONABLE CHECKLIST
+
+### Bu Hafta Yapılacaklar:
+
+- [ ] Minikube veya Kind kurulumu yapın
+- [ ] kubectl kurulumu ve konfigürasyonu
+- [ ] İlk pod'unuzu oluşturun
+- [ ] GitHub'da learning repository açın
+- [ ] Bu dokümanı kendi ihtiyaçlarınıza göre özelleştirin
+- [ ] Kubernetes Slack'e katılın
+- [ ] İlk blog post'unuzu yazın: "Kubernetes Yolculuğum Başlıyor"
+
+### Bu Ay Yapılacaklar:
+
+- [ ] Docker temelleri bitirin
+- [ ] Kubernetes temel objeleri öğrenin
+- [ ] İlk 3 mini-proje tamamlayın
+- [ ] KodeKloud veya benzeri bir kursa kayıt olun
+- [ ] LinkedIn profilinizi güncelleyin
+- [ ] Local meetup bulun ve katılın
+
+---
+
+## 📞 YARDIM ve DESTEK
+
+### Takıldığınızda:
+
+1. **Kubernetes Docs:** Her zaman ilk başvuru kaynağınız
+2. **Stack Overflow:** Spesifik problemler için
+3. **Kubernetes Slack:** Real-time yardım
+4. **Reddit r/kubernetes:** Community discussion
+5. **GitHub Issues:** Tool-specific problemler
+
+### Recommended Slack Channels:
+
+- #kubernetes-users
+- #kubernetes-novice
+- #cka-exam-prep
+- #ckad-exam-prep
+- #prometheus-operator
+- #helm-users
+
+---
+
+## 🎓 SON SÖZ
+
+Kubernetes öğrenmek bir maraton, sprint değil. Tutarlı, disiplinli çalışmayla 6-12 ay içinde profesyonel seviyeye ulaşabilirsiniz. Unutmayın:
+
+> "Kubernetes sadece bir teknoloji değil, bulut-native düşünme şeklidir."
+
+Bu yol haritası size rehberlik edecek, ancak asıl öğrenme pratikle gelir. Her gün biraz ilerleyin, hata yapmaktan korkmayın, ve community ile etkileşimde bulunun.
+
+**Başarılar! Kubernetes yolculuğunuz başlasın! 🚀**
+
+---
+
+## 📌 EK NOTLAR
+
+### Sık Sorulan Sorular
+
+**S: Kubernetes öğrenmek için programlama bilmek şart mı?**
+C: Temel seviyede hayır, ama ileri seviye (operator development) için Go veya Python bilmek gerekir.
+
+**S: Hangi cloud provider'ı seçmeliyim?**
+C: AWS EKS en popüler, ama üçünü de bilmek ideal. Başlangıç için birini seçin, sonra diğerlerini öğrenin.
+
+**S: Sertifikasyon gerekli mi?**
+C: Türkiye için CKA çok değerli. Global şirketler için daha az önemli ama yine de artı.
+
+**S: Mac/Windows/Linux hangisi daha iyi?**
+C: Linux (Ubuntu) ideal, Mac iyi, Windows (WSL2 ile) kullanılabilir.
+
+**S: Managed (EKS/AKS/GKE) vs Self-hosted hangisi?**
+C: Öğrenmek için her ikisini de deneyin. Production için genelde managed tercih edilir.
+
+---
+
+**Versiyon:** 1.0
+**Son Güncelleme:** Şubat 2026
+**Kubernetes Version:** 1.29+
+**Yazar:** Cloud Native & Kubernetes Uzmanı
+
+---
+
+## 🔄 Düzenli Güncellemeler
+
+Bu doküman canlı bir dokümandır. Kubernetes ekosistemi hızla gelişiyor:
+
+- Her 3 ayda bir gözden geçirin
+- Yeni araçları ekleyin
+- Deprecated teknolojileri kaldırın
+- Community feedback'e göre güncelleyin
+
+**Not:** Kendi notlarınızı eklemeye devam edin. Bu sizin kişisel roadmap'iniz!
+
+---
+
+*"The best time to start was yesterday. The second best time is now."* 🚀
