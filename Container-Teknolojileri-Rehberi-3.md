@@ -2471,3 +2471,10 @@ Container'ları master ettikten sonra orchestration (Kubernetes) öğren. Kubern
 **Versiyon:** 1.0
 
 *İyi çalışmalar! Happy containerizing! 🐳*
+
+1. Hangi dil? → base image seç
+2. Dependency nasıl yüklenir?
+3. Kod nereye kopyalanır?
+4. Hangi komutla çalışır?
+5. Port var mı?
+6. Production mı dev mi?
